@@ -1,0 +1,19 @@
+s3_id: <%= ENV['S3_KEY'] %>
+s3_secret: <%= ENV['S3_SECRET'] %>
+s3_bucket: caitlinphoto.com
+cloudfront_distribution_id: E1IHW5PBSHUB7D
+cloudfront_distribution_config:
+  default_cache_behavior:
+    min_TTL: <%= 60 * 60 * 24 %>
+  aliases:
+    quantity: 1
+    items:
+      CNAME: '*.caitlinphoto.com'
+max_age: 120
+gzip: true
+gzip_zopfli: true
+cloudfront_invalidate_root: true
+exclude_from_upload:
+  - .DS_Store
+  - s3_website.yml
+  - images/originals/
