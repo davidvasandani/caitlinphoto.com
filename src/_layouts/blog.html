@@ -1,0 +1,27 @@
+---
+layout: base
+---
+
+{% include header.html %}
+
+<main class="content index" role="main">
+
+    <h5 class="index-headline featured"><span>&#9733;</span></h5>
+
+    {% for post in site.posts %}
+    <article class="post featured" itemscope role="article">
+                <div class="article-item">
+                    <header class="post-header">
+                        <h2 class="post-title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
+                        <span class="post-meta"><time datetime="{{ post.date YYYY-MM-DD }}">{{ post.date | date: "%a, %b %d, %Y"}}</time></span>
+                    </header>
+                    <section class="post-excerpt" itemprop="description">
+                        <p>{{ post.content | strip_html | truncatewords: 40 }}</p>
+                    </section>
+                </div>
+            </article>
+    {% endfor %}
+
+    <h5 class="index-headline bottom"><span>{{pagination}}</span></h5>
+
+</main>

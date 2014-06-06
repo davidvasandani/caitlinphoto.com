@@ -1,0 +1,24 @@
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <div class="left">
+                <div class="blog-cover" style="background-image: url({{ site.me_image }})">Blog Cover Image</div>
+            </div>
+            <div class="right">
+                <h1 class="blog-title">{{ site.title }}</h1>
+                <div class="blog-social">
+                     <a href="http://www.twitter.com/caitlinmphoto"><i class="fa fa-twitter"></i></a>
+                     <a href="http://instagram.com/caitlinmccarrick"><i class="fa fa-instagram"></i></a>
+                     <a href="http://www.flickr.com/photos/sweetlin"><i class="fa fa-flickr"></i></a>
+                     <a href="http://www.linkedin.com/pub/caitlin-mccarrick/1b/416/635"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <h2 class="blog-description">{{ site.description }}</h2>
+                <div class="head-links">
+                    {% if page.is_home == 'true' %}{% else %}<a href="/">Home</a> · {% endif %}<a href="/about">About</a> · <a href="/blog/">Blog</a> · <a href="/photos/">Photography</a> · <a href="/projects/">Projects</a> · <a href="mailto:caitlin@caitlinphoto.com">Email Me</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</header>
+

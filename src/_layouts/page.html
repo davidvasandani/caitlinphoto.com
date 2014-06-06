@@ -1,0 +1,58 @@
+---
+layout: base
+---
+
+<main class="content" role="main">
+
+    <article class="page page-about">
+
+        <div class="post-image">
+            <div class="post-image-image" data-0="opacity: 1; top: 0px" data-500="opacity: 0.2; top: 250px">
+                Post Image
+            </div>
+        </div>
+        <header class="post-header">
+            <a href="/" class="button-back"><i class="fa fa-chevron-left "></i></a>
+        </header>
+        <script>
+            (function ($) {
+                "use strict";
+
+                $(document).ready(function(){
+
+                    $('.post-content').each(function() {
+                        var $this = $(this),
+                            url = "{{ page.header_image }}";
+
+                        $(".post-image-image").css('background-image', 'url('+url+')');
+
+                    });
+
+                    var $window = $(window),
+                        $image = $('.post-image-image');
+                    $window.on('scroll', function() {
+                        var top = $window.scrollTop();
+
+                        if (top < 0 || top > 1500) { return; }
+                        $image
+                            .css('transform', 'translate3d(0px, '+top/1.75+'px, 0px)')
+                            .css('opacity', 1-Math.max(top/700, 0));
+                    });
+                    $window.trigger('scroll');
+
+                    var height = $('.post-image-image').height();
+                        $('.post-content').css('padding-top', height + 'px');
+
+                });
+
+            }(jQuery));
+        </script>
+
+        <h1 class="post-title">{{ page.title }}</h1>
+
+            <section class="post-content">
+                {{ content }}
+            </section>
+    </article>
+
+</main>

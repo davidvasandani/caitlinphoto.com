@@ -1,0 +1,20 @@
+# Site settings
+name: caitlinphoto.com
+my_name: Caitlin McCarrick
+title: Caitlin McCarrick
+email: caitlin@caitlinphoto.com
+description: "Photographer. Dog Lover. Santa Cruz."
+baseurl: ""
+url: "http://caitlinphoto.com"
+blog_image_url: "/images/blog/"
+
+me_image: "/images/caitlin-mccarrick.jpg"
+about_me_image: "/images/caitlin-mccarrick-long.jpg"
+full_me_image: "/images/caitlin-mccarrick-long.jpg"
+
+
+
+# Build settings
+markdown: kramdown
+permalinks: pretty
+source: src
