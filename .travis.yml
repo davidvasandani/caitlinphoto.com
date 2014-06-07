@@ -5,6 +5,7 @@ install:
 
 script:
   - jekyll build
+  - check-links _site
 
 after_success: s3_website push --headless
 
