@@ -9,5 +9,5 @@ gem 'jekyll'
 # push to S3 bucket
 gem 's3_website', '~>1'
 
-gem 'rdiscount'
-gem 'liquid'
+# gem 'rdiscount'
+# gem 'liquid'
