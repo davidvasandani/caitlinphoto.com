@@ -18,3 +18,13 @@ full_me_image: "/images/caitlin-mccarrick-long.jpg"
 markdown: kramdown
 permalinks: pretty
 source: src
+
+exclude:
+  - README.md
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - changelog.md
+  - "*.Rmd"
+  - vendor
+  - .travis.yml
