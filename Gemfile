@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # caches bundle to S3
-gem 'bundle_cache', '~> 0.2.1'
+# gem 'bundle_cache', '~> 0.2.1'
 
 # blog engine
 gem 'jekyll'
