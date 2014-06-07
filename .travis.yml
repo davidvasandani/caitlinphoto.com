@@ -2,7 +2,7 @@ language: ruby
 install:
 - bundle install
 # script: bundle exec rake site:deploy
-script: jekyll build
+script: jekyll build && s3_website push
 env:
   global:
   - secure: WUtMInoqdxIr76dn/mlcAEQR1M86TYhWOUIJkr1uXKLJy/Dr+l9oruKGBQ6+CP4dlL7lZ8iQVkC/qRPis/3EwnSeBMVQwDPwcGi5Jaw4WYJFL9GVBt7qMGXDIZ7A3maS8iVRg8Gr+OJfKF/58Vxzv8aailnUmMLFgyR444O0egs=
