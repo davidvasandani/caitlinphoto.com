@@ -12,6 +12,7 @@
     "gulp": "^3.6.1",
     "gulp-sass": "^0.7.1",
     "browser-sync": "^0.8.2",
-    "gulp-autoprefixer": "0.0.7"
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-git": "robrich/gulp-git"
   }
 }
