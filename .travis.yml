@@ -1,6 +1,7 @@
-language: ruby
+language: node_js
 
-cache: bundler
+install:
+  - bundle install
 
 script:
   - jekyll build
