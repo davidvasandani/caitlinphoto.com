@@ -1,7 +1,7 @@
-s3_id: <%= ENV['S3_KEY'] %>
-s3_secret: <%= ENV['S3_SECRET'] %>
-s3_bucket: caitlinphoto.com
-cloudfront_distribution_id: E1IHW5PBSHUB7D
+s3_id: <%= ENV['AWS_S3_KEY'] %>
+s3_secret: <%= ENV['AWS_S3_SECRET'] %>
+s3_bucket: <%= ENV['AWS_S3_BUCKET'] %>
+cloudfront_distribution_id: <%= ENV['CLOUDFRONT_ID'] %>
 cloudfront_distribution_config:
   default_cache_behavior:
     min_TTL: <%= 60 * 60 * 24 %>
