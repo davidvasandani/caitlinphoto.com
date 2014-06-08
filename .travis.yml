@@ -1,4 +1,7 @@
-language: node_js
+language: ruby
+
+before_install:
+  - rvm 2.1.2
 
 install:
   - bundle install
@@ -6,9 +9,6 @@ install:
 script:
   - jekyll build
   - check-links _site
-
-after_script:
-  - bundle_cache
 
 after_success:
   - s3_website push --headless
