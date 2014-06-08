@@ -1,7 +1,8 @@
 language: node_js
-bundler_args: "--without development --path=~/.bundle"
-before_install:
-- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+bundler_args: --without development --path=~/.bundle # set for bundler install all gems, except "development" group and use "~/.bundle" folder for this gemsbefore_install:
+- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc' # skip installing docs for gems
+- gem install bundler bundle_cache # install bundler and bundle_cache gems
+- bundle_cache_install # download cached gems and unpack them in "~/.bundle" folder
 install:
 - bundle install
 script:
