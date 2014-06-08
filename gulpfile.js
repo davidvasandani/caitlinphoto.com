@@ -6,41 +6,9 @@ var cp          = require('child_process');
 var git         = require('gulp-git');
 
 var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
-    gitCommit: '<span style="color: grey">Running:</span> $ git commit'
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
-// Run git add
-// src is the file(s) to add (or ./*)
-gulp.task('add', function(){
-  return gulp.src('./src/*')
-    .pipe(git.add());
-});
-
-// Run git commit
-// src are the files to commit (or ./*)
-gulp.task('commit', function(){
-  return gulp.src('./src/*')
-    .pipe(git.commit('initial commit'));
-});
-
-// Run git push
-// remote is the remote repo
-// branch is the remote branch to push to
-gulp.task('push', function(){
-  git.push('origin', 'master', function (err) {
-    if (err) throw err;
-  });
-});
-
-// Run git pull
-// remote is the remote repo
-// branch is the remote branch to pull from
-gulp.task('pull', function(){
-  git.pull('origin', 'master', {args: '--rebase'}, function (err) {
-    if (err) throw err;
-  });
-});
 /**
  * Build the Jekyll Site
  */
