@@ -4,3 +4,4 @@ Gemfile.lock
 vendor
 caitlinphoto.sublime-workspace
 node_modules
+src/images/generated/*
