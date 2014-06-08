@@ -3,11 +3,44 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
+var git         = require('gulp-git');
 
 var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
+    gitCommit: '<span style="color: grey">Running:</span> $ git commit'
 };
 
+// Run git add
+// src is the file(s) to add (or ./*)
+gulp.task('add', function(){
+  return gulp.src('./src/*')
+    .pipe(git.add());
+});
+
+// Run git commit
+// src are the files to commit (or ./*)
+gulp.task('commit', function(){
+  return gulp.src('./src/*')
+    .pipe(git.commit('initial commit'));
+});
+
+// Run git push
+// remote is the remote repo
+// branch is the remote branch to push to
+gulp.task('push', function(){
+  git.push('origin', 'master', function (err) {
+    if (err) throw err;
+  });
+});
+
+// Run git pull
+// remote is the remote repo
+// branch is the remote branch to pull from
+gulp.task('pull', function(){
+  git.pull('origin', 'master', {args: '--rebase'}, function (err) {
+    if (err) throw err;
+  });
+});
 /**
  * Build the Jekyll Site
  */
@@ -64,4 +97,4 @@ gulp.task('watch', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['pull', 'browser-sync', 'watch']);
