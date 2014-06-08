@@ -8,13 +8,14 @@ install:
 
 script:
   - jekyll build
-  - check-links _site
+  - bundle exec check-links _site
 
 after_success:
   - s3_website push --headless
 
 env:
   global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   - BUNDLE_ARCHIVE="caitlinphoto"
   - secure: WUtMInoqdxIr76dn/mlcAEQR1M86TYhWOUIJkr1uXKLJy/Dr+l9oruKGBQ6+CP4dlL7lZ8iQVkC/qRPis/3EwnSeBMVQwDPwcGi5Jaw4WYJFL9GVBt7qMGXDIZ7A3maS8iVRg8Gr+OJfKF/58Vxzv8aailnUmMLFgyR444O0egs=
   - secure: ULhrR+VBDRs7zK4dO8D3FXSVe7IY8GZUaW4vGW8C01eyjYOvPlV/tiaQKC8rGXvsN/LfPzzz6mOv+rWAAcOI9WoHufVjk+YM7d65s/6zTdWwD2T+XEeV8Tc4diaX9vdFPFDEm/KxpvWaVmcvIt4XxmRdijjj/69B8IJFMShG7F4=
