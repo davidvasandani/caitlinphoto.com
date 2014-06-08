@@ -1,21 +1,16 @@
 language: ruby
 
-bundler_args: --without development --path=~/.bundle
-
-before_install:
-  - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
-  - gem install bundler bundle_cache
-  - bundle_cache_install
+cache: bundler
 
 script:
-  - bundle exec jekyll build
-  - bundle exec check-links _site
+  - jekyll build
+  - check-links _site
 
 after_script:
   - bundle_cache
 
 after_success:
-  - bundle exec s3_website push --headless
+  - s3_website push --headless
 
 env:
   global:
