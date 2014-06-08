@@ -12,10 +12,6 @@ me_image: "/images/caitlin-mccarrick.jpg"
 about_me_image: "/images/caitlin-mccarrick-long.jpg"
 full_me_image: "/images/caitlin-mccarrick-long.jpg"
 
-cache:
-  directories:
-  - src/images/generated
-
 # Build settings
 markdown: kramdown
 permalinks: pretty

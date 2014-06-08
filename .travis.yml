@@ -3,6 +3,10 @@ language: ruby
 rvm:
   - 2.1.2
 
+cache:
+  directories:
+  - src/images/generated
+
 install:
   - bundle install
 
