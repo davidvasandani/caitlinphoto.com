@@ -1,7 +1,7 @@
 language: node_js
 cache: bundler
 bundler_args: --without development --path=~/.bundle
-- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+- "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
 - gem install bundler bundle_cache
 - bundle_cache_install
 install:
