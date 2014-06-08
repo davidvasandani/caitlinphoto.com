@@ -3,3 +3,4 @@ _site
 Gemfile.lock
 vendor
 caitlinphoto.sublime-workspace
+node_modules
