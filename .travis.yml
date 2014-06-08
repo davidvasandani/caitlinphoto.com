@@ -1,18 +1,25 @@
-language: node_js
-cache: bundler
+language: ruby
+
 bundler_args: --without development --path=~/.bundle
+
 before_install:
-- "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
-- gem install bundler bundle_cache
-- bundle_cache_install
+  - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
+  - gem install bundler bundle_cache
+  - bundle_cache_install
+
 install:
-- bundle install
+  - bundle install
+
 script:
-- jekyll build
-- check-links _site
+  - jekyll build
+  - check-links _site
+
 after_script:
-- bundle_cache
-after_success: s3_website push --headless
+  - bundle_cache
+
+after_success:
+  - s3_website push --headless
+
 env:
   global:
   - BUNDLE_ARCHIVE="caitlinphoto"
