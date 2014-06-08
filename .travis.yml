@@ -7,9 +7,6 @@ before_install:
   - gem install bundler bundle_cache
   - bundle_cache_install
 
-install:
-  - bundle install
-
 script:
   - jekyll build
   - check-links _site
