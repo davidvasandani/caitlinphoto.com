@@ -1,6 +1,7 @@
 language: ruby
 
 before_install:
+  - rvm install ruby-2.1.2
   - rvm 2.1.2
 
 install:
