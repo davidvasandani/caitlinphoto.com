@@ -15,4 +15,4 @@ What was the narrative that this representation was meant to embellish and compl
 With a preset specified:  
 {% picture gallery portrait.jpg alt="An unsual picture" data-downloadable="true" %}
 
-{% prcture 58D9Ojv.jpg %}
+{% picture 58D9Ojv.jpg %}
