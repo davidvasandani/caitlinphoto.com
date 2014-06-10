@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Second Post Coming Soon"
-date:   2014-06-07
+title: Second Post Coming Soon
+date: {}
 header_image: "/images/headers/2014-05-08-code.jpg"
+published: true
 ---
 
 {% picture portrait.jpg alt="An unsual picture" %}
@@ -13,3 +14,7 @@ What was the narrative that this representation was meant to embellish and compl
 
 With a preset specified:  
 {% picture gallery portrait.jpg alt="An unsual picture" data-downloadable="true" %}
+
+![](/src/images/originals/3heV6pX.jpg)
+
+{% picture 3heV6pX.jpg %}
