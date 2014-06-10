@@ -83,8 +83,8 @@ picture:
 prose:
   rooturl: 'src'
   siteurl: 'http://caitlinphoto.com'
-  relativeLinks: 'http://prose.github.io/starter/links.jsonp'
-  media: 'media'
+  relativeLinks: 'http://caitlinphoto.com/links.jsonp'
+  media: 'src/images/originals'
   metadata:
     _posts:
       - name: "category"
