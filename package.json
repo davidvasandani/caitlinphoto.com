@@ -9,10 +9,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.6.1",
-    "gulp-sass": "^0.7.1",
     "browser-sync": "^0.8.2",
+    "cl-strings": "0.0.5",
+    "gulp": "^3.6.1",
     "gulp-autoprefixer": "0.0.7",
-    "gulp-git": "robrich/gulp-git"
+    "gulp-git": "robrich/gulp-git",
+    "gulp-sass": "^0.7.1",
+    "gulp-util": "gulpjs/gulp",
+    "orchestrator": "orchestrator/orchestrator"
   }
 }
