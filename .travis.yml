@@ -1,22 +1,15 @@
 language: ruby
-
 rvm:
-  - 2.1.2
-
+- 2.1.2
 cache:
   directories:
   - src/images/generated
-
 install:
-  - bundle install
-
+- bundle install
 script:
-  - jekyll build
-  # - check-links _site
-
+- jekyll build
 after_success:
-  - s3_website push --headless
-
+- s3_website push --headless
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
@@ -25,5 +18,6 @@ env:
   - secure: ULhrR+VBDRs7zK4dO8D3FXSVe7IY8GZUaW4vGW8C01eyjYOvPlV/tiaQKC8rGXvsN/LfPzzz6mOv+rWAAcOI9WoHufVjk+YM7d65s/6zTdWwD2T+XEeV8Tc4diaX9vdFPFDEm/KxpvWaVmcvIt4XxmRdijjj/69B8IJFMShG7F4=
   - secure: EKoKVSwoKVgYNtdvUWLEWDGghZZKNdqgzYNfiFh0R6JlY9+ggKZMvW/AP2YCTxD3E3Cgjc6d9/qlrHsDUdKS/xlKZ8wixkkxjb1K5Lhk8cUCaOZ5sSpiFj6nhN+OR/Qs5r18s+c2VSXfSgKfR9TdixpdqSzWz/jVHzbcTdv/MoY=
   - secure: V9Y8+cQBPgii/t2d5yQCd/k2Feq9AoiRrUFhx/HoJL+LCMxV0CjGtF5MQ9tS8gDgi/vlYFhsssmMEmpzX710WAsjpCZAxUZIEI1xkhwc2PHVOste7L1UGGvhdXdYAHa7UaEuKT7Tdg4Lcnkox/+T3o7uOcOpcCRacl/enSjjI3g=
-  - secure: VGZ/7Ws9TXrznBIyIOQMJ9nrk7GacUGlTRpQUG/4yyPpexoqOtE3oiEWM00Ftu2az3Ng8tLLtd8705jeNALKIADofMRcR0ij2APVNwkdeMOBJaBkKGtf81Q1As3QFc4wPChFcfLGKezsrpFzwZT9c9WYzTr9d3HQ4tjW4C7FoSc=
+  # - secure: VGZ/7Ws9TXrznBIyIOQMJ9nrk7GacUGlTRpQUG/4yyPpexoqOtE3oiEWM00Ftu2az3Ng8tLLtd8705jeNALKIADofMRcR0ij2APVNwkdeMOBJaBkKGtf81Q1As3QFc4wPChFcfLGKezsrpFzwZT9c9WYzTr9d3HQ4tjW4C7FoSc=
   - secure: IhP1Qy+WHjaiMApO/OFTUHIpwhoiFLFVGDTx0VnqndMMBla56qRYgcMPxZZ7aqz8Negy4AVKAXzg5E1YJuz+QfDV0ehFH5PsqZeZvbKIxXEOnxKmLlLL5bUL37C9K3wGtgRdrZvsyZ2VmK/GX4+ualHkfqU2OoZhQ8n0W/YWBMg=
+  - secure: BeOq9ixvecWZ3Lye8peSmOeVJqviBvHb/kmUKgQrylSiHS05f6umEixIdgTD+OPgRcVNC+yjzhsRg2oPz+whvUcQAUMU0mOlaR2gBXHbwUkS17+7RQsRfWnxEsRWCButQFVXZx6Iubfj44j5g+ZHV4NEleOnEK33PJ0yp9MSrOk=
