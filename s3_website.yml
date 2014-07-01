@@ -1,6 +1,6 @@
 s3_id: <%= ENV['AWS_S3_KEY'] %>
 s3_secret: <%= ENV['AWS_S3_SECRET'] %>
-s3_bucket: www.caitlinphoto.com
+s3_bucket: <%= ENV['AWS_S3_BUCKET'] %>
 
 max_age:
   "*": 120
@@ -23,7 +23,7 @@ exclude_from_upload:
   - s3_website.yml
   - images/originals/
 
-s3_reduced_redundancy: true
+s3_reduced_redundancy: false
 
 cloudfront_distribution_id: E3QLVRL4OTAZTD
 
@@ -38,7 +38,7 @@ cloudfront_distribution_config:
 
 cloudfront_invalidate_root: true
 
-concurrency_level: 5
+# concurrency_level: 5
 
 # redirects:
 #   index.php: /
