@@ -6,8 +6,9 @@ cache:
   - src/images/generated
 install:
 - bundle install
+- npm install
 script:
-- jekyll build
+- gulp jekyll build
 after_success:
 - s3_website push --headless
 env:
