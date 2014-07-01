@@ -5,7 +5,7 @@ title: "photography"
 
 {% picture 2554628632-6fac241ec7-o.jpg alt="An unsual picture" %}
 
-{% picture ari-and-max-dyp-22.jpg alt="An unsual picture" %}
+{% picture ari-and-max-dyp-21.jpg alt="An unsual picture" %}
 
 {% picture ari-and-max-dyp-22.jpg alt="An unsual picture" %}
 
