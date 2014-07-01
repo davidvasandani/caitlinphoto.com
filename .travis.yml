@@ -10,7 +10,7 @@ install:
 script:
 - gulp jekyll-build
 after_success:
-- s3_website push --headless
+- s3_website push --verbose
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
