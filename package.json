@@ -14,7 +14,11 @@
     "gulp": "^3.6.1",
     "gulp-autoprefixer": "0.0.7",
     "gulp-git": "robrich/gulp-git",
+    "gulp-jshint": "^1.6.4",
+    "gulp-plumber": "^0.6.3",
+    "gulp-rename": "^1.2.0",
     "gulp-sass": "^0.7.1",
+    "gulp-uglify": "^0.3.1",
     "gulp-util": "gulpjs/gulp",
     "orchestrator": "orchestrator/orchestrator"
   }

@@ -4,6 +4,10 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var git         = require('gulp-git');
+var jshint      = require('gulp-jshint');
+var uglify      = require('gulp-uglify');
+var rename      = require('gulp-rename');
+var plumber     = require('gulp-plumber');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -28,7 +32,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'uglify', 'jekyll-build'], function() {
     browserSync.init(null, {
         server: {
             baseDir: '_site'
@@ -60,6 +64,22 @@ gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
     gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
+
+gulp.task('lint', function(){
+  return gulp.src(['js/*.js'])
+    .pipe(plumber())
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+gulp.task('uglify', function(){
+  gulp.src(['js/*.js'])
+    .pipe(plumber())
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('_site'));
+});
+
 
 /**
  * Default task, running just `gulp` will compile the sass,
