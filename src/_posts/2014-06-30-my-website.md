@@ -7,4 +7,4 @@ published: true
 
 {% picture 545722_10150997012664120_1272687530_n.jpg %}
 
-this is a test
+Time to update the website.
